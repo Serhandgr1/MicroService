@@ -1,0 +1,15 @@
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\bin\Debug\net7.0\BuiseneesLayer.deps.json
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\bin\Debug\net7.0\BuiseneesLayer.dll
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\bin\Debug\net7.0\BuiseneesLayer.pdb
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\bin\Debug\net7.0\DataAccessLayer.dll
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.csproj.AssemblyReference.cache
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.AssemblyInfoInputs.cache
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.AssemblyInfo.cs
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.csproj.CoreCompileInputs.cache
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.csproj.CopyComplete
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.dll
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\refint\BuiseneesLayer.dll
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\BuiseneesLayer.pdb
+C:\Users\dogru\source\repos\AcunMedyaApi\BuiseneesLayer\obj\Debug\net7.0\ref\BuiseneesLayer.dll
