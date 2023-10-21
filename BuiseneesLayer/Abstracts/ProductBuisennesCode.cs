@@ -1,4 +1,5 @@
-﻿using BuiseneesLayer.Abstracts;
+﻿using AutoMapper;
+using BuiseneesLayer.Abstracts;
 using BuiseneesLayer.Contracts;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
@@ -14,6 +15,7 @@ namespace Product.Api
         private readonly IGenericBuisennesCode<KampanyaProductModel> _genericKampanyaProductRepostory;
         private readonly IGenericBuisennesCode<ProductsInCartModel> _genericProductInCardRepostory;
         private readonly IGenericBuisennesCode<LikeDataModel> _genericLikeDataRepostory;
+        private readonly IMapper _mapper;
         public ProductBuisennesCode()
         {
             _genericProductRepostory = new GenericBuisenessCode<ProductModel>();
@@ -21,7 +23,7 @@ namespace Product.Api
             _genericKampanyaProductRepostory = new GenericBuisenessCode<KampanyaProductModel>();
             _genericProductInCardRepostory = new GenericBuisenessCode<ProductsInCartModel>();
             _genericLikeDataRepostory= new GenericBuisenessCode<LikeDataModel>();
-            _productDataRepostory = new ProductDataRepostory();
+            _productDataRepostory = new ProductDataRepostory(_mapper);
         }
         public async Task<List<ProductModel>> BuyProduct()
         {
@@ -163,6 +165,11 @@ namespace Product.Api
             return productModel;
             // return _repository.Products();
             //return context.Products();
+        }
+
+        public async Task<List<ProductModel>> FeaturedProduct()
+        {
+        return await _productDataRepostory.FeaturedProduct();
         }
     }
 }

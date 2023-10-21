@@ -37,6 +37,11 @@ namespace Product.Api.Controllers
          // return await _genericLikeDataBuisennesCode.GetById(Id);
          //  return await _product.LikeProduct(Id);
         }
+        [HttpGet("featuredProduct")]
+        public async Task<List<ProductModel>> FeaturedProduct()
+        {
+            return await _productBuisennesCode.FeaturedProduct();
+        }
         [HttpGet("products-buy")]
         public async Task<List<ProductModel>> BuyProduct()
         {

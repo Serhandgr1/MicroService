@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "e9RTjf4HpBT9gXsAKjPjRXfHaXgk75sUOAsTVU+kqjyttG7f/OoZ9q3Tqf0QYKmI2OO2q8oVi6vaOuTvh3/iJg==",
+  "dgSpecHash": "Np9DQETALgypWFyWU/WRtX48YbDdHjcEnJFi+1+/7hxMU+8t4aQORomJz1DICH27ZjKIT3sjl8h3zlu80rzw+w==",
   "success": true,
   "projectFilePath": "C:\\Users\\dogru\\Documents\\GitHub\\MicroService\\AcunMedyaApi\\AcunMedyaApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\dogru\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\dogru\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",

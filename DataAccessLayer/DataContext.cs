@@ -19,7 +19,7 @@ namespace DataAccessLayer
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-            optionsBuilder.UseSqlServer(@"Your ConnectionString");
+            optionsBuilder.UseSqlServer(@"Server=localhost\SQLEXPRESS;Database=E_COMMERCE;TrustServerCertificate=true;Trusted_Connection=True;Max Pool Size=500;");
         }
 
         public DbSet<ProductModel> Products { get; set; }

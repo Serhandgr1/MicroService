@@ -1,13 +1,13 @@
 {
   "Version": 1,
-  "Hash": "3ijaFhvHDhXRDehPxqHQeoC1wrgYUb9FGQjQU/ZYKLg=",
+  "Hash": "F8J/TumtrGNUqLXT837GjHN5Ce6+pvkwITAMhnAnf/M=",
   "Source": "Product.Api",
   "BasePath": "_content/Product.Api",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\dogru\\source\\repos\\AcunMedyaApi\\AcunMedyaApi\\AcunMedyaApi.csproj",
+      "Identity": "C:\\Users\\dogru\\Documents\\GitHub\\MicroService\\AcunMedyaApi\\AcunMedyaApi.csproj",
       "Version": 2,
       "Source": "AcunMedyaApi",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",

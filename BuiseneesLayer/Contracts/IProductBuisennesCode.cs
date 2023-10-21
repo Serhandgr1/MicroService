@@ -22,5 +22,6 @@ namespace Product.Api
         Task<ProductModel> UpdateProduct(ProductModel productModel);
         Task<ProductModel> ProductDeleteInCard(int userId, int Id);
         Task<List<ProductModel>> SimilarProducts(int productId);
+        Task<List<ProductModel>> FeaturedProduct();
     }
 }

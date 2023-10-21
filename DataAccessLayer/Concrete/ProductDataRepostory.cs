@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Abstract;
+﻿using AutoMapper;
+using DataAccessLayer.Abstract;
 using DataAccessLayer.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -12,6 +13,11 @@ namespace DataAccessLayer.Concrete
 {
     public class ProductDataRepostory : IProductDataRepostory
     {
+        private readonly IMapper _mapper;
+        public ProductDataRepostory(IMapper mapper)
+        {
+            _mapper = mapper;   
+        }
         public async Task<ProductModel> ProductById(int id)
         {
             using (var db = new DataContext())
@@ -158,8 +164,8 @@ namespace DataAccessLayer.Concrete
         {
             using (var db = new DataContext()) 
             {
-                List < ProductModel > returndata = new List<ProductModel>();
-               bool control = await db.BuyProduct.AnyAsync(x => x.ProductId == productId);
+                List <ProductModel> returndata = new List<ProductModel>();
+                bool control = await db.BuyProduct.AnyAsync(x => x.ProductId == productId);
                 if (control) 
                 {
                     List<ProductModel> productModel = new List<ProductModel>();
@@ -176,38 +182,111 @@ namespace DataAccessLayer.Concrete
                             }
                         }
                     }
+
                   returndata=await  ControlProductList(productModel); ///  liste içerisinde aynı id ye sahip birden fazla data var ise tek hale getirecek ve her data 1 defa yer almış olacak
                 }
                 return returndata;
               
             }
         }
-
-        //listede aynı id den 1den fazla mevcut ise tek hale getirerek listeyi geri döner
-        public async Task<List<ProductModel>> ControlProductList(List<ProductModel> product) 
+        //buyproduct , likedata , examined tablolarında bulunan ürünleri bir araya getirip tekrar eden idleri teke düşürerek öne çıkan ürünleri bulmamızı sağlar
+        public async Task<List<ProductModel>> FeaturedProduct() 
+        {
+            using (var db = new DataContext())
+            {
+                List<ProductModel> productModels = new List<ProductModel>();
+                List<int> productId= new List<int>();
+                var examined = await db.Examined.ToListAsync();
+                foreach (ExaminedModel model in examined) 
+                {
+                    productId.Add(model.ProductId);
+                }
+                var buyproduct = await db.BuyProduct.ToListAsync();
+                foreach (BuyProductModel model in buyproduct)
+                {
+                    productId.Add(model.ProductId);
+                }
+                var likedata = await db.LikeData.ToListAsync();
+                foreach (LikeDataModel model in likedata)
+                {
+                    productId.Add(model.ProductId);
+                }
+                List<int> donus = await ControlProductIdList(productId);
+                foreach (int id in donus) 
+                {
+                    productModels.Add(await ProductById(id));
+                }
+                //  ProductModel data =  _mapper.Map<ProductModel>(likedata);
+                // var godata =  await RepeatedProduct(data);
+                return productModels;
+            }
+        }
+        // liste içerisinde 1den fazla tekrarlanan elemanların listesini döner
+        public async Task<List<ProductModel>> RepeatedProduct(List<ProductModel> product) 
         {
             List<ProductModel> productModels1 = new List<ProductModel>();
-            List<ProductModel> productModels2 = new List<ProductModel>(); // silinecekler
+            List<ProductModel> productModels2 = new List<ProductModel>(); // tekrarlananlar
             productModels1.AddRange(product);
-            foreach (ProductModel productModel in product) 
+            foreach (ProductModel productModel in product)
             {
                 int id = productModel.ProductId;
                 productModels1.Remove(productModel);
-                foreach (ProductModel productModel1 in productModels1) 
+                foreach (ProductModel productModel1 in productModels1)
                 {
-                   bool controlId= productModel1.ProductId == id;
-                    if (controlId) 
+                    bool controlId = productModel1.ProductId == id;
+                    if (controlId)
                     {
                         productModels2.Add(productModel1);
                     }
                 }
             }
+
+            return productModels2;
+        }
+        public async Task<List<int>> RepeatedProductLikedata(List<int> product)
+        {
+            List<int> productModels1 = new List<int>();
+            List<int> productModels2 = new List<int>(); // tekrarlananlar
+            productModels1.AddRange(product);
+            foreach (int productModel in product)
+            {
+                int id = productModel;
+                productModels1.Remove(productModel);
+                foreach (int productModel1 in productModels1)
+                {
+                    bool controlId = productModel1 == id;
+                    if (controlId)
+                    {
+                        productModels2.Add(productModel1);
+                    }
+                }
+            }
+
+            return productModels2;
+        }
+
+        //listede aynı id den 1den fazla mevcut ise tek hale getirerek listeyi geri döner
+        public async Task<List<ProductModel>> ControlProductList(List<ProductModel> product) 
+        {
+            List <ProductModel> productModels2 = await RepeatedProduct(product);
             foreach (ProductModel product1 in productModels2) 
             {
 
                 product.Remove(product1);
             }
            return product;
+        }
+        public async Task<List<int>> ControlProductIdList(List<int> productId)
+        {
+            List<int> data = await RepeatedProductLikedata(productId);
+            List<int> productModels2 = new List<int>();
+            productModels2.AddRange(data);
+            foreach (int product1 in productModels2)
+            {
+
+                productId.Remove(product1);
+            }
+            return productId;
         }
     }
 }

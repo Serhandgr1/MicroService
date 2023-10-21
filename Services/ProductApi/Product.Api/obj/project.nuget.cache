@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "jyZJwBMsgR/l77IO/z3f7Uvfa4u3k4NOzxynv6ysj0RLeP3+/u8XX3wqlLnk4bR74DI3DsO4KCMqXeXNXcdr7g==",
+  "dgSpecHash": "123ilEdWc35htWRY7tl2CJZuVkjNIMU+NTyhvsS1SMDSbJe0kwQoYNFhxn/Ll6CKc+ke+wTE6eXXSPMTDLZngA==",
   "success": true,
   "projectFilePath": "C:\\Users\\dogru\\Documents\\GitHub\\MicroService\\Services\\ProductApi\\Product.Api\\Product.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\dogru\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\dogru\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\dogru\\.nuget\\packages\\fluentvalidation\\11.5.2\\fluentvalidation.11.5.2.nupkg.sha512",

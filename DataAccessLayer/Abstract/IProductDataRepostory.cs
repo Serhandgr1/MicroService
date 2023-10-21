@@ -16,5 +16,6 @@ namespace DataAccessLayer.Abstract
         Task<List<ProductModel>> LikeProduct(int userId);
         Task<List<ProductModel>> ProductCard(int Id);
         Task<List<ProductModel>> SimilarProducts(int productId);
+        Task<List<ProductModel>> FeaturedProduct();
     }
 }
