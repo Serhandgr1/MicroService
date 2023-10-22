@@ -28,6 +28,7 @@ namespace DataAccessLayer.Concrete
                 else {  return new ProductModel(); }
             }
         }
+        //Kişinin satın aldığı ürünleri döner
         public async Task<List<ProductModel>> BuyProductsGetUser(int userId)
         {
 
@@ -49,7 +50,7 @@ namespace DataAccessLayer.Concrete
 
             }
         }
-
+        //Kişi ürün satın aldığında BuyProduct tablosuna kaydı atar
         public async Task<ProductModel> BuyProductsUser(int productId, int userId)
         {
             BuyProductModel model = new BuyProductModel();
@@ -73,7 +74,7 @@ namespace DataAccessLayer.Concrete
 
             }
         }
-
+        //Kişi ürün incelediğinde  Examined tablosuna kayıt atar
         public async Task<ProductModel> ExaminedProduct(int productId, int userId)
         {
             using (var db = new DataContext())
@@ -98,6 +99,7 @@ namespace DataAccessLayer.Concrete
 
             }
         }
+        //Kişinin incelediği ürünleri döner
         public async Task<List<ProductModel>> ExaminedProductAll(int userId)
         {
             using (var db = new DataContext())
@@ -117,7 +119,7 @@ namespace DataAccessLayer.Concrete
 
             }
         }
-
+        //Kişinin beğendiği ürünleri döner
         public async Task<List<ProductModel>> LikeProduct(int userId)
         {
             using (var db = new DataContext())
@@ -139,7 +141,81 @@ namespace DataAccessLayer.Concrete
             }
 
         }
-
+        //Kategorye göre ürünleri listeler (Teknoloji kategorisinde bulunan ürünleri getir gibi)
+        public async Task<List<ProductModel>> GetCategoryById(int id) 
+        {
+            using (var db = new DataContext()) 
+            {
+                List<ProductModel> categoryModels = new List<ProductModel>();   
+                bool control = await db.Products.AnyAsync(x=>x.CategoryId == id);
+                if (control) 
+                {
+                    var data = await db.Products.Where(x => x.CategoryId == id).ToListAsync();
+                    categoryModels.AddRange(data);
+                }
+                return categoryModels;
+            }
+        }
+        // Modele göre ürünlerin listesini döner
+        public async Task<List<ProductModel>> GetModelsById(int id) 
+        {
+            using (var db = new DataContext())
+            {
+                List<ProductModel> modelsData = new List<ProductModel>();
+                bool control = await db.Products.AnyAsync( x=>x.ModelId == id);
+                if (control) 
+                {
+                    var data = await db.Products.Where(x => x.ModelId == id).ToListAsync();
+                    modelsData.AddRange(data);
+                }
+                return modelsData;
+            }
+        }
+        //Markaya göre ürünleri listeler
+        public async Task<List<ProductModel>> GetBrandById(int id) 
+        {
+            using (var db = new DataContext())
+            {
+                List<ProductModel> brandData = new List<ProductModel>();
+                bool control = await db.Products.AnyAsync (x=>x.BrandId == id);
+                if (control) 
+                {
+                    var data = await db.Products.Where(x => x.BrandId == id).ToListAsync();
+                    brandData.AddRange(data);
+                }
+                return brandData;
+            }
+        }
+        // Kategorye göre kampanyalı ürünleri döndürür 
+        public async Task<List<ProductModel>> GetOfferProductById(int id) 
+        {
+            using (var db = new DataContext()) 
+            {
+                List<ProductModel> offerData = new List<ProductModel>();
+                List<ProductModel> product = new List<ProductModel>();
+                bool control = await db.Products.AnyAsync(x => x.CategoryId == id);
+                if (control) 
+                {
+                    var data = await db.Kampanyalar.ToListAsync();
+                    foreach (KampanyaProductModel kampanya in data) 
+                    {
+                        product.Add(await ProductById(kampanya.ProductId));
+                    }
+                    foreach (ProductModel productModel in product) 
+                    {
+                        if (productModel.CategoryId == id) 
+                        {
+                            //KT
+                           // var kampanya= _mapper.Map<KampanyaProductModel>(productModel);
+                            offerData.Add(productModel);
+                        }
+                    }
+                }
+                return offerData;   
+            }
+        
+        }
+        //Kişinin sepetini döner
         public async Task<List<ProductModel>> ProductCard(int id)
         {
             using (var db = new DataContext())
@@ -159,7 +235,7 @@ namespace DataAccessLayer.Concrete
 
             }
         }
-
+        // Gelen Ürünü satın alanların satın aldığı diğer ürünleri döner
         public async Task<List<ProductModel>> SimilarProducts(int productId)
         {
             using (var db = new DataContext()) 
@@ -242,6 +318,30 @@ namespace DataAccessLayer.Concrete
             }
 
             return productModels2;
+        }
+        //Çok satan ürünleri döner // buyproduct tablosunda 1den fazla kez satın alınmış ürünlerin listesini döner
+        public async Task<List<ProductModel>> BestSellingProducts() 
+        {
+            using (var db = new DataContext()) 
+            {
+                List<int> buylistId = new List<int>();
+                List<ProductModel> productModels = new List<ProductModel>();
+                var buylis= await db.BuyProduct.ToListAsync();
+                foreach (BuyProductModel productModel in buylis) 
+                {
+                    buylistId.Add(productModel.ProductId);
+                }
+                foreach (int id in buylistId)
+                {
+                    productModels.Add(await ProductById(id));
+                }
+                List<ProductModel> controlmodel= await RepeatedProduct(productModels);
+                List<ProductModel> productModels1= await ControlProductList(controlmodel);
+                //List<int> datalist = await RepeatedProductLikedata(buylistId);
+                //List<int> data=await ControlProductIdList(datalist);
+               
+                return productModels1;
+            }
         }
         public async Task<List<int>> RepeatedProductLikedata(List<int> product)
         {

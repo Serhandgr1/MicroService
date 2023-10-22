@@ -37,6 +37,7 @@ namespace Product.Api.Controllers
          // return await _genericLikeDataBuisennesCode.GetById(Id);
          //  return await _product.LikeProduct(Id);
         }
+        //Öne çıkan ürünler listesi
         [HttpGet("featuredProduct")]
         public async Task<List<ProductModel>> FeaturedProduct()
         {
@@ -54,6 +55,15 @@ namespace Product.Api.Controllers
           //  }
           //  return products;
         }
+
+        //Çok satan ürünleri döner
+        [HttpGet("bestsellingproducts")]
+        public async Task<List<ProductModel>> BestSellingProducts() 
+        {
+            return await _productBuisennesCode.BestSellingProducts();
+        }
+
+
         [HttpGet("products-buy-user/{userId}")]
         public async Task<List<ProductModel>> BuyProductsGetUser(int userId)
         {
@@ -86,6 +96,31 @@ namespace Product.Api.Controllers
           //  return await _product.ProductCard(Id);
 
         }
+        // Kategorye göre ürünleri döner
+        [HttpGet("getcategory-by-id/{id}")]
+        public async Task<List<ProductModel>> GetCategoryProductById(int id)
+        {
+            return await _productBuisennesCode.GetCategoryById(id);
+        }
+        //Modele göre ürünleri döner
+        [HttpGet("getmodels-by-id/{id}")]
+        public async Task<List<ProductModel>> GetModelsProductById(int id)
+        {
+            return await _productBuisennesCode.GetModelsById(id);
+        }
+        // Markaya göre ürünleri döner
+        [HttpGet("getbrand-by-id/{id}")]
+        public async Task<List<ProductModel>> GetBrandById(int id) 
+        {
+                return await _productBuisennesCode.GetBrandById(id);
+        }
+        //Kategory ıdye göre kamyanyalı ürünleri döner
+        [HttpGet("offer-by-id/{offerId}")]
+        public async Task<List<ProductModel>> GetOfferProductById(int offerId) 
+        {
+          return  await _productBuisennesCode.GetOfferProductById(offerId);
+        }
+
         [HttpPost("products-post")]
         public async Task<string> PostProduct(ProductModel productModel)
         {
@@ -93,6 +128,8 @@ namespace Product.Api.Controllers
           //  await _product.PostProduct(productModel);
             return "KAYIT BAŞARILI";
         }
+
+        //Sepete ürün eklendiğinda bu ürünü satın alanların satın aldığı diğer ürünleri döner
         [HttpPost("products-post-card/{productId}/{userId}")]
         public async Task<List<ProductModel>> PostProductInCard(int productId, int userId)
         {

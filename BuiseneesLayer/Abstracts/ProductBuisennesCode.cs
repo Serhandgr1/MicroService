@@ -171,5 +171,30 @@ namespace Product.Api
         {
         return await _productDataRepostory.FeaturedProduct();
         }
+
+        public async Task<List<ProductModel>> BestSellingProducts()
+        {
+         return await _productDataRepostory.BestSellingProducts();
+        }
+
+        public async Task<List<ProductModel>> GetOfferProductById(int id)
+        {
+          return await  _productDataRepostory.GetOfferProductById(id);
+        }
+
+        public async Task<List<ProductModel>> GetBrandById(int id)
+        {
+        return await _productDataRepostory.GetBrandById(id);
+        }
+
+        public async Task<List<ProductModel>> GetCategoryById(int id)
+        {
+           return await _productDataRepostory.GetCategoryById(id);
+        }
+
+        public async Task<List<ProductModel>> GetModelsById(int id)
+        {
+          return await _productDataRepostory.GetModelsById(id);
+        }
     }
 }

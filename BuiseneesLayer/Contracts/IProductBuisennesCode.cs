@@ -23,5 +23,10 @@ namespace Product.Api
         Task<ProductModel> ProductDeleteInCard(int userId, int Id);
         Task<List<ProductModel>> SimilarProducts(int productId);
         Task<List<ProductModel>> FeaturedProduct();
+        Task<List<ProductModel>> BestSellingProducts();
+        Task<List<ProductModel>> GetOfferProductById(int id);
+        Task<List<ProductModel>> GetBrandById(int id);
+        Task<List<ProductModel>> GetCategoryById(int id);
+        Task<List<ProductModel>> GetModelsById(int id);
     }
 }

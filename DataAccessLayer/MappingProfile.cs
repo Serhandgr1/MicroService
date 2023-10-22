@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Azure;
 using DataAccessLayer.Models;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,12 @@ namespace DataAccessLayer
                 .ForMember(destination => destination.ProductId , operation =>operation.MapFrom(source => source.ProductId))
                 .ForMember(destination => destination.LikeId, operation => operation.MapFrom(source => source.ProductId))
                 .ForMember(destination => destination.UserId, operation => operation.MapFrom(source => source.ProductId));
+            CreateMap<ProductModel, KampanyaProductModel>()
+                .ForMember(destination => destination.ProductId, operation => operation.MapFrom(source => source.ProductId))
+                .ForMember(destination => destination.KampanyaId, operation => operation.MapFrom(source => source.CategoryId));
+            CreateMap<KampanyaProductModel, ProductModel>()
+                .ForMember(destination => destination.ProductId, operation => operation.MapFrom(source => source.ProductId))
+                .ForMember(destination => destination.CategoryId, operation => operation.MapFrom(source => source.KampanyaId));
         }
     }
 }
