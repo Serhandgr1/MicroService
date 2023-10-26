@@ -1,4 +1,5 @@
 ﻿using BuiseneesLayer.Contracts;
+using DataAccessLayer.Models;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,8 @@ namespace BuiseneesLayer.Abstracts
     {
         private readonly Channel<int> product;
         private readonly Channel<List<int>> buy;
+        private readonly Channel<ProductModel> productModel;
+
         public BackGroundServiceProductController(IConfiguration configuration)
         {
 
@@ -23,6 +26,16 @@ namespace BuiseneesLayer.Abstracts
             };
             product = Channel.CreateBounded<int>(options);
             buy = Channel.CreateBounded<List<int>>(options);
+            productModel = Channel.CreateBounded<ProductModel>(options);        }
+        public async Task UpdateProductControl(ProductModel model)
+        {
+            ArgumentNullException.ThrowIfNull(model);
+            await productModel.Writer.WriteAsync(model);
+        }
+        public async Task<ProductModel> UpdateProductRead(CancellationToken cancellationToken)
+        {
+            var product = await productModel.Reader.ReadAsync(cancellationToken);
+            return product;
         }
         public async ValueTask ProductStokController(int Id)
         {

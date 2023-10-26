@@ -1,4 +1,5 @@
 ﻿using BuiseneesLayer;
+using BuiseneesLayer.Contracts;
 using DataAccessLayer.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,12 +12,12 @@ namespace Product.Api.Controllers
     {
         private static readonly ILogger<ProductController> logger;
         private readonly IProductBuisennesCode _productBuisennesCode;
-        //    private readonly IBackGroundServiceProduct _backGroundServiceProduct;
-        public ProductController(ILogger<ProductController> _logger)
+        private readonly IBackGroundServiceProduct _backGroundServiceProduct;
+        public ProductController(ILogger<ProductController> _logger , IBackGroundServiceProduct backGroundServiceProduct)
         {
             _logger = logger;
             _productBuisennesCode = new ProductBuisennesCode();
-     //       _backGroundServiceProduct = backGroundServiceProduct;
+            _backGroundServiceProduct = backGroundServiceProduct;
         }
 
         [HttpGet("{id}")] //"{id}"
@@ -30,6 +31,14 @@ namespace Product.Api.Controllers
             //  return await _product.ProductsById(Id);
         }
 
+
+        //Gelen id li ürünü inceleyenlerin aynı katagoride inceledikleri diğer ürünleri döner
+        [HttpGet("get-similarreviewedproduct/{id}")]
+        public async Task<List<ProductModel>> SimilarReviewedProduct(int id) 
+        {
+           return await  _productBuisennesCode.SimilarReviewedProduct(id);
+        }
+
         [HttpGet("productslike/{id}")]
         public async Task<List<ProductModel>> LikeProduct(int Id)
         {
@@ -37,6 +46,8 @@ namespace Product.Api.Controllers
          // return await _genericLikeDataBuisennesCode.GetById(Id);
          //  return await _product.LikeProduct(Id);
         }
+
+
         //Öne çıkan ürünler listesi
         [HttpGet("featuredProduct")]
         public async Task<List<ProductModel>> FeaturedProduct()
@@ -153,15 +164,21 @@ namespace Product.Api.Controllers
         [HttpPost("products-buy/{productId}/{userId}")]
         public async Task<ProductModel> BuyProductsUser(int productId, int userId)
         {
-          return await  _productBuisennesCode.BuyProductsUser(productId, userId);
-          //  await _backGroundServiceProduct.BuyProductMail(productId, userId);
-           // await _backGroundServiceProduct.ProductStokController(productId);
-         //   return await _product.BuyProductsUser(productId, userId);
+                // bir ürün satın alındığında ürün stok durumunu kontrol eden ve stok durumu min stok durumundan alta düştü ise bu ürünü sepetinde bulunduran kullanıcılara mail gönderen service
+            // await  _backGroundServiceProduct.BuyProductMail(productId, userId);
+               // bir ürün satın alındığında satın alan kullanıcıya satın alma işlemi ile ilgili bilgilendirme maili gönderen service
+            // await _backGroundServiceProduct.ProductStokController(productId);
+            return await _productBuisennesCode.BuyProductsUser(productId, userId);
+          
+            //   return await _product.BuyProductsUser(productId, userId);
         }
         [HttpPut("products-uptade")]
         public async Task<ProductModel> UpdateProduct(ProductModel productModel)
         {
-          return await _productBuisennesCode.UpdateProduct(productModel);
+            // ürün güncellendiğinde bu ürünün stok durumunu ve fiyatını kontrol eden eğer stok min stok altına düştü ise yada fiyat indirime girdi ise bu ürünü sepetinde bulunduran yada beğenen kullanıcılara mail gönderecek olan bg service yazılacak
+
+            await _backGroundServiceProduct.UpdateProductControl(productModel);
+            return await _productBuisennesCode.UpdateProduct(productModel);
            // return await _product.UpdateProduct(productModel);
         }
         [HttpDelete("{id}")]

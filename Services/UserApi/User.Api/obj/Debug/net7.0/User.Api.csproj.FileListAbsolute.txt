@@ -100,12 +100,6 @@ C:\Users\dogru\source\repos\AcunMedyaApi\Services\UserApi\User.Api\obj\Debug\net
 C:\Users\dogru\source\repos\AcunMedyaApi\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.pdb
 C:\Users\dogru\source\repos\AcunMedyaApi\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.genruntimeconfig.cache
 C:\Users\dogru\source\repos\AcunMedyaApi\Services\UserApi\User.Api\obj\Debug\net7.0\ref\User.Api.dll
-C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.csproj.AssemblyReference.cache
-C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.AssemblyInfoInputs.cache
-C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.AssemblyInfo.cs
-C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.csproj.CoreCompileInputs.cache
-C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug\net7.0\AcunMedyaApi.deps.json
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug\net7.0\AcunMedyaApi.runtimeconfig.json
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug\net7.0\Ocelot.json
@@ -189,7 +183,13 @@ C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug\net7.0\AcunMedyaApi.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug\net7.0\BuiseneesLayer.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.csproj.AssemblyReference.cache
+C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.AssemblyInfoInputs.cache
+C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.AssemblyInfo.cs
+C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.csproj.CoreCompileInputs.cache
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\User.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\staticwebassets\msbuild.User.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.User.Api.props
 C:\Users\dogru\Documents\GitHub\MicroService\Services\UserApi\User.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.User.Api.props

@@ -9,6 +9,9 @@ using System.Data.SqlClient;
 using BuiseneesLayer;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using BuiseneesLayer.Contracts;
+using BuiseneesLayer.Abstracts;
+using Product.Api;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -28,9 +31,6 @@ builder.Services.AddCors(options =>
 // Add services to the container.
 // builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddOcelot();
-//builder.Services.AddSingleton<IBackGroundServiceProduct, BackGroundServiceProductController>();
-//builder.Services.AddHostedService<BackGroundServiceProduct>();
-//builder.Services.AddHostedService<BackGroundServiceBuyMail>();
 builder.Configuration.AddJsonFile("Ocelot.json");
 builder.Services.AddControllers();
 builder.Logging.ClearProviders();

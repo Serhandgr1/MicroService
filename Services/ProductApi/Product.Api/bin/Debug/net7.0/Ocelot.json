@@ -85,6 +85,54 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
+      "DownstreamPathTemplate": "/api/Product/get-similarreviewedproduct/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7074
+        }
+      ],
+      "UpstreamPathTemplate": "/p/get-similarreviewedproduct/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/getcategory-by-id/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7074
+        }
+      ],
+      "UpstreamPathTemplate": "/p/getcategory-by-id/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/getmodels-by-id/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7074
+        }
+      ],
+      "UpstreamPathTemplate": "/p/getmodels-by-id/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/getbrand-by-id/{id}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7074
+        }
+      ],
+      "UpstreamPathTemplate": "/p/getbrand-by-id/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/Product/offer-by-id/{offerId}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [

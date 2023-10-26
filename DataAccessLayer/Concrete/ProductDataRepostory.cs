@@ -63,6 +63,7 @@ namespace DataAccessLayer.Concrete
                 if (kt && kt2)
                 {
                     await db.BuyProduct.AddAsync(model);
+                    await db.SaveChangesAsync();  
                     //ürün satıldığında stok kontrolü yap stok 20 den az ise bu ürünü sepetinde bulunduran kullanıcılara mail at stok 10 dan az ise stok güncelle 
                     return await ProductById(productId);
                 }
@@ -118,6 +119,33 @@ namespace DataAccessLayer.Concrete
                 else return productModels;
 
             }
+        }
+        //Gelen id li ürünü inceleyenlerin aynı katagoride inceledikleri diğer ürünleri döner
+        public async Task<List<ProductModel>> SimilarReviewedProduct(int productId) 
+        {
+            using(var db = new DataContext()) 
+            {
+                List<ProductModel> reviewedProduct = new List<ProductModel>();
+              ProductModel product=await ProductById(productId);
+              var data = await db.Examined.Where(x => x.ProductId == productId).ToListAsync();
+                foreach (ExaminedModel examinedModel in data) 
+                {
+                    int userId = examinedModel.UserId;
+                    List<ProductModel> productModels=await ExaminedProductAll(userId);
+                    foreach (ProductModel model in productModels) 
+                    {
+                       bool control= model.CategoryId == product.CategoryId;
+                       bool control2 = model.ProductId == productId;
+                        if (control && !control2) 
+                        {
+                            reviewedProduct.Add(model);
+                        }
+                    }
+                }
+                List<ProductModel> godata=await ControlProductList(reviewedProduct);
+                return godata;
+            }
+            
         }
         //Kişinin beğendiği ürünleri döner
         public async Task<List<ProductModel>> LikeProduct(int userId)

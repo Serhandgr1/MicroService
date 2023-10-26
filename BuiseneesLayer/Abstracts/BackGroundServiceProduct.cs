@@ -20,6 +20,8 @@ namespace BuiseneesLayer
         {
             _product = product;
         }
+        // bir ürün satın alındığında ürün stok durumunu kontrol eden ve stok durumu min stok durumundan alta düştü ise bu ürünü sepetinde bulunduran kullanıcılara mail gönderen service
+
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested) 

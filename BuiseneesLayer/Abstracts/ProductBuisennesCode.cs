@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using BuiseneesLayer;
 using BuiseneesLayer.Abstracts;
 using BuiseneesLayer.Contracts;
 using DataAccessLayer.Abstract;
@@ -39,12 +40,14 @@ namespace Product.Api
 
         public async Task<List<ProductModel>> BuyProductsGetUser(int userId)
         {  
+
             return await _productDataRepostory.BuyProductsGetUser(userId);
             // return context.BuyProductsGetUser(userId);
         }
 
         public async Task<ProductModel> BuyProductsUser(int productId, int userId)
         {
+        
             return await _productDataRepostory.BuyProductsUser(productId, userId);
             // return context.BuyProductsUser(productId, userId);
         }
@@ -195,6 +198,11 @@ namespace Product.Api
         public async Task<List<ProductModel>> GetModelsById(int id)
         {
           return await _productDataRepostory.GetModelsById(id);
+        }
+
+        public async Task<List<ProductModel>> SimilarReviewedProduct(int productId)
+        {
+            return await _productDataRepostory.SimilarReviewedProduct(productId);
         }
     }
 }

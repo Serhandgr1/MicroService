@@ -100,12 +100,6 @@ C:\Users\dogru\source\repos\AcunMedyaApi\Services\ProductApi\Product.Api\obj\Deb
 C:\Users\dogru\source\repos\AcunMedyaApi\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.pdb
 C:\Users\dogru\source\repos\AcunMedyaApi\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.genruntimeconfig.cache
 C:\Users\dogru\source\repos\AcunMedyaApi\Services\ProductApi\Product.Api\obj\Debug\net7.0\ref\Product.Api.dll
-C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.csproj.AssemblyReference.cache
-C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.AssemblyInfoInputs.cache
-C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.AssemblyInfo.cs
-C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.csproj.CoreCompileInputs.cache
-C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin\Debug\net7.0\AcunMedyaApi.deps.json
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin\Debug\net7.0\AcunMedyaApi.runtimeconfig.json
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin\Debug\net7.0\Ocelot.json
@@ -189,7 +183,13 @@ C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin\Debug\net7.0\AcunMedyaApi.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin\Debug\net7.0\BuiseneesLayer.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\bin\Debug\net7.0\DataAccessLayer.pdb
+C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.csproj.AssemblyReference.cache
+C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.AssemblyInfoInputs.cache
+C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.AssemblyInfo.cs
+C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.csproj.CoreCompileInputs.cache
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\Product.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\staticwebassets\msbuild.Product.Api.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\staticwebassets\msbuild.build.Product.Api.props
 C:\Users\dogru\Documents\GitHub\MicroService\Services\ProductApi\Product.Api\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.Product.Api.props

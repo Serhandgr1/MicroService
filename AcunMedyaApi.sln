@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserApi", "UserApi", "{E9CD
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProductApi", "ProductApi", "{803410DA-51F6-4679-919F-3AC891AEC66A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Api", "Services\UserApi\User.Api\User.Api.csproj", "{A9C7091A-E104-40BC-8394-B0626B182476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Api", "Services\UserApi\User.Api\User.Api.csproj", "{A9C7091A-E104-40BC-8394-B0626B182476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Api", "Services\ProductApi\Product.Api\Product.Api.csproj", "{9FD52332-C5DD-4DFB-A6C3-24B6F78AA46D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Product.Api", "Services\ProductApi\Product.Api\Product.Api.csproj", "{9FD52332-C5DD-4DFB-A6C3-24B6F78AA46D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

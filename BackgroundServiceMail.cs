@@ -9,16 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using BuiseneesLayer.Contracts;
 
-namespace BuiseneesLayer.Abstracts
-{
-    public class BackGroundServiceBuyMail : BackgroundService
+    public class BackgroundServiceMail : BackgroundService
     {
         private readonly IBackGroundServiceProduct _backGroundServiceProduct;
-        public BackGroundServiceBuyMail(IBackGroundServiceProduct backGroundServiceProduct)
+        public BackgroundServiceMail(IBackGroundServiceProduct backGroundServiceProduct)
         {
             _backGroundServiceProduct = backGroundServiceProduct;
         }
-        // bir ürün satın alındığında satın alan kullanıcıya satın alma işlemi ile ilgili bilgilendirme maili gönderen service
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
 
@@ -67,4 +64,3 @@ namespace BuiseneesLayer.Abstracts
             }
         }
     }
-}

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataAccessLayer.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,5 +13,7 @@ namespace BuiseneesLayer.Contracts
         ValueTask<int> ProductStockRead(CancellationToken cancellationToken);
         ValueTask BuyProductMail(int productId, int userId);
         ValueTask<List<int>> BuyProductMailRead(CancellationToken cancellationToken);
+        Task UpdateProductControl(ProductModel model);
+        Task<ProductModel> UpdateProductRead(CancellationToken cancellationToken);
     }
 }
