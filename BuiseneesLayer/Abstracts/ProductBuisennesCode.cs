@@ -37,6 +37,9 @@ namespace Product.Api
             }
            return productModels;
         }
+        public async Task<List<CategoryModel>> GetAllCategoryName() {
+            return await _productDataRepostory.GetAllCategoryName();
+        }
 
         public async Task<List<ProductModel>> BuyProductsGetUser(int userId)
         {  

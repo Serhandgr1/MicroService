@@ -29,5 +29,6 @@ namespace Product.Api
         Task<List<ProductModel>> GetCategoryById(int id);
         Task<List<ProductModel>> GetModelsById(int id);
         Task<List<ProductModel>> SimilarReviewedProduct(int productId);
+        Task<List<CategoryModel>> GetAllCategoryName();
     }
 }

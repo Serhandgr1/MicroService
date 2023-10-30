@@ -85,6 +85,18 @@
       "UpstreamHttpMethod": [ "Get" ]
     },
     {
+      "DownstreamPathTemplate": "/api/Product/category-all",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7074
+        }
+      ],
+      "UpstreamPathTemplate": "/p/category-all",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
       "DownstreamPathTemplate": "/api/Product/get-similarreviewedproduct/{id}",
       "DownstreamScheme": "https",
       "DownstreamHostAndPorts": [
@@ -226,6 +238,18 @@
         }
       ],
       "UpstreamPathTemplate": "/p/products-examined/{userId}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/smallerProduct/{productId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7074
+        }
+      ],
+      "UpstreamPathTemplate": "/p/smallerProduct/{productId}",
       "UpstreamHttpMethod": [ "Get" ]
     },
     {

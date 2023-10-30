@@ -119,6 +119,12 @@ namespace Product.Api.Controllers
         {
             return await _productBuisennesCode.GetModelsById(id);
         }
+        //Kategoryleri
+        [HttpGet("category-all")]
+        public async Task<List<CategoryModel>> GetAllCategoryName()
+        {
+            return await _productBuisennesCode.GetAllCategoryName();
+        }
         // Markaya göre ürünleri döner
         [HttpGet("getbrand-by-id/{id}")]
         public async Task<List<ProductModel>> GetBrandById(int id) 
@@ -130,6 +136,11 @@ namespace Product.Api.Controllers
         public async Task<List<ProductModel>> GetOfferProductById(int offerId) 
         {
           return  await _productBuisennesCode.GetOfferProductById(offerId);
+        }
+        [HttpGet("smallerProduct/{productId}")]
+        public async Task<List<ProductModel>> SmallerProduct(int productId)
+        {
+            return await _productBuisennesCode.SimilarProducts(productId);
         }
 
         [HttpPost("products-post")]

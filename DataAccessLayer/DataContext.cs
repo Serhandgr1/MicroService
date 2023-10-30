@@ -29,6 +29,7 @@ namespace DataAccessLayer
         public DbSet<LikeDataModel> LikeData { get; set; }
         public DbSet<KampanyaProductModel> Kampanyalar { get; set; }
         public DbSet<ExaminedModel> Examined { get; set; }
+        public DbSet<CategoryModel> Category { get; set; }
 
 
         // IConfiguration configuration;

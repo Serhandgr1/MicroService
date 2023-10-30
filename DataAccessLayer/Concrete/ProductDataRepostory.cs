@@ -28,6 +28,15 @@ namespace DataAccessLayer.Concrete
                 else {  return new ProductModel(); }
             }
         }
+
+        public async Task<List<CategoryModel>> GetAllCategoryName() {
+
+            using (var db = new DataContext())
+            {
+                var data = await db.Category.ToListAsync();
+                return data;
+            }
+           }
         //Kişinin satın aldığı ürünleri döner
         public async Task<List<ProductModel>> BuyProductsGetUser(int userId)
         {

@@ -94,6 +94,12 @@ C:\Users\dogru\source\repos\AcunMedyaApi\AcunMedyaApi\obj\Debug\net7.0\refint\Ac
 C:\Users\dogru\source\repos\AcunMedyaApi\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.pdb
 C:\Users\dogru\source\repos\AcunMedyaApi\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.genruntimeconfig.cache
 C:\Users\dogru\source\repos\AcunMedyaApi\AcunMedyaApi\obj\Debug\net7.0\ref\AcunMedyaApi.dll
+C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.csproj.AssemblyReference.cache
+C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.AssemblyInfoInputs.cache
+C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.AssemblyInfo.cs
+C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.csproj.CoreCompileInputs.cache
+C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\appsettings.Development.json
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\appsettings.json
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\Ocelot.json
@@ -171,13 +177,7 @@ C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\Buise
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\DataAccessLayer.dll
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\BuiseneesLayer.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\bin\Debug\net7.0\DataAccessLayer.pdb
-C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.csproj.AssemblyReference.cache
-C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.AssemblyInfoInputs.cache
-C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.AssemblyInfo.cs
-C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.csproj.CoreCompileInputs.cache
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\AcunMedyaApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\staticwebassets\msbuild.AcunMedyaApi.Microsoft.AspNetCore.StaticWebAssets.props
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\staticwebassets\msbuild.build.AcunMedyaApi.props
 C:\Users\dogru\Documents\GitHub\MicroService\AcunMedyaApi\obj\Debug\net7.0\staticwebassets\msbuild.buildMultiTargeting.AcunMedyaApi.props
