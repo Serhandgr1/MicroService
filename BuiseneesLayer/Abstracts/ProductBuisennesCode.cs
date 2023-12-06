@@ -93,10 +93,8 @@ namespace Product.Api
 
         public async Task LikedDelete(int productId, int userId)
         {
-            LikeDataModel likeDataModel = new LikeDataModel();
-            likeDataModel.UserId = userId;
-            likeDataModel.ProductId = productId;
-            await _genericLikeDataRepostory.Delete(likeDataModel);
+            LikeDataModel likeData=  await _productDataRepostory.GetLikeDataUser(userId, productId);
+            await _genericLikeDataRepostory.Delete(likeData);
             // await _repository.LikedDelete(productId, userId);
             // context.LikedDelete(productId,userId);
         }

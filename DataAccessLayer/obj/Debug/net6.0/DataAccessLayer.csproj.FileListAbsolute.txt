@@ -10,14 +10,14 @@ C:\Users\dogru\source\repos\AcunMedyaApi\DataAccessLayer\obj\Debug\net6.0\DataAc
 C:\Users\dogru\source\repos\AcunMedyaApi\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
 C:\Users\dogru\source\repos\AcunMedyaApi\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb
 C:\Users\dogru\source\repos\AcunMedyaApi\DataAccessLayer\obj\Debug\net6.0\ref\DataAccessLayer.dll
+C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
+C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
+C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.AssemblyReference.cache
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfoInputs.cache
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.AssemblyInfo.cs
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.csproj.CoreCompileInputs.cache
-C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.deps.json
-C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.dll
-C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\bin\Debug\net6.0\DataAccessLayer.pdb
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.dll
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\refint\DataAccessLayer.dll
 C:\Users\dogru\Documents\GitHub\MicroService\DataAccessLayer\obj\Debug\net6.0\DataAccessLayer.pdb

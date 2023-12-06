@@ -24,5 +24,6 @@ namespace DataAccessLayer.Abstract
         Task<List<ProductModel>> GetModelsById(int id);
         Task<List<ProductModel>> SimilarReviewedProduct(int productId);
         Task<List<CategoryModel>> GetAllCategoryName();
+        Task<LikeDataModel> GetLikeDataUser(int userId, int productId);
     }
 }

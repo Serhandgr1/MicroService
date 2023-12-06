@@ -109,6 +109,14 @@ namespace DataAccessLayer.Concrete
 
             }
         }
+        public async Task<LikeDataModel> GetLikeDataUser(int userId  , int productId) 
+        {
+            using(var db = new DataContext()) 
+            {
+                 LikeDataModel data =  await db.LikeData.Where(x => x.UserId == userId && x.ProductId == productId).FirstAsync();
+                return data;
+            }
+        }
         //Kişinin incelediği ürünleri döner
         public async Task<List<ProductModel>> ExaminedProductAll(int userId)
         {

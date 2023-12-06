@@ -16,6 +16,7 @@ namespace DataAccessLayer.Concrete
             using (var db = new DataContext()) 
             {
                await db.Set<T>().AddAsync(entity);
+                await db.SaveChangesAsync();
             }
         }
 
@@ -23,11 +24,8 @@ namespace DataAccessLayer.Concrete
         {
             using (var db = new DataContext()) 
             {
-                var data = await db.Set<T>().FindAsync(entity);
-                if (data != null) 
-                {
-                    db.Set<T>().Remove(data); 
-                }
+                db.Set<T>().Remove(entity);
+                db.SaveChanges();
             }
         }
         //kt
@@ -37,6 +35,7 @@ namespace DataAccessLayer.Concrete
             using (var db = new DataContext() ) 
             {
              return await db.Set<T>().ToListAsync();
+               
             }
         }
 
@@ -45,6 +44,7 @@ namespace DataAccessLayer.Concrete
             using (var db = new DataContext()) 
             {
               var data = await db.Set<T>().FindAsync(id);
+                await db.SaveChangesAsync();
                 return data;
               
 

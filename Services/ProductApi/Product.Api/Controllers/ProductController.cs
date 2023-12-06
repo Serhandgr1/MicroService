@@ -21,6 +21,7 @@ namespace Product.Api.Controllers
         }
 
         [HttpGet("{id}")] //"{id}"
+        [ResponseCache(Duration =300)]
         public async Task<ProductModel> GetProductsById(int Id)
         {
             ILogger logger = LoggerFactory.Create(builder => builder.AddConsole()).CreateLogger<ProductController>();
@@ -34,12 +35,14 @@ namespace Product.Api.Controllers
 
         //Gelen id li ürünü inceleyenlerin aynı katagoride inceledikleri diğer ürünleri döner
         [HttpGet("get-similarreviewedproduct/{id}")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> SimilarReviewedProduct(int id) 
         {
            return await  _productBuisennesCode.SimilarReviewedProduct(id);
         }
 
         [HttpGet("productslike/{id}")]
+        [ResponseCache(Duration = 300)] // Responce Cache
         public async Task<List<ProductModel>> LikeProduct(int Id)
         {
         return  await  _productBuisennesCode.LikeProduct(Id);
@@ -50,6 +53,7 @@ namespace Product.Api.Controllers
 
         //Öne çıkan ürünler listesi
         [HttpGet("featuredProduct")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> FeaturedProduct()
         {
             return await _productBuisennesCode.FeaturedProduct();
@@ -69,6 +73,7 @@ namespace Product.Api.Controllers
 
         //Çok satan ürünleri döner
         [HttpGet("bestsellingproducts")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> BestSellingProducts() 
         {
             return await _productBuisennesCode.BestSellingProducts();
@@ -82,12 +87,14 @@ namespace Product.Api.Controllers
        //     return await _product.BuyProductsGetUser(userId);
         }
         [HttpGet("products-kampanya")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> KampanyaProduct()
         {
          return  await _productBuisennesCode.KampanyaProduct();
           //  return await _product.KampanyaProduct();
         }
         [HttpGet("get-all-products")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> GetProducts()
         {
             return  await _productBuisennesCode.Products();
@@ -95,12 +102,14 @@ namespace Product.Api.Controllers
           //  return await _product.Products();
         }
         [HttpGet("products-examined/{userId}")]
+        [ResponseCache(Duration =300)]
         public async Task<List<ProductModel>> ExaminedProductAll(int userId)
         {
          return  await _productBuisennesCode.ExaminedProductAll(userId);
           //  return await _product.ExaminedProductAll(userId);
         }
         [HttpGet("card/{Id}")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> GetCard(int Id)
         {
         return await   _productBuisennesCode.ProductCard(Id);
@@ -109,6 +118,7 @@ namespace Product.Api.Controllers
         }
         // Kategorye göre ürünleri döner
         [HttpGet("getcategory-by-id/{id}")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<ProductModel>> GetCategoryProductById(int id)
         {
             return await _productBuisennesCode.GetCategoryById(id);
@@ -121,6 +131,7 @@ namespace Product.Api.Controllers
         }
         //Kategoryleri
         [HttpGet("category-all")]
+        [ResponseCache(Duration = 300)]
         public async Task<List<CategoryModel>> GetAllCategoryName()
         {
             return await _productBuisennesCode.GetAllCategoryName();
@@ -155,7 +166,7 @@ namespace Product.Api.Controllers
         [HttpPost("products-post-card/{productId}/{userId}")]
         public async Task<List<ProductModel>> PostProductInCard(int productId, int userId)
         {
-           // await  _productBuisennesCode.PostProductInCard(productId, userId);
+            await  _productBuisennesCode.PostProductInCard(productId, userId);
              return await _productBuisennesCode.SimilarProducts(productId);
           //  await _product.PostProductInCard(productId, userId);
            // return "Ürün Sepere Eklendi";

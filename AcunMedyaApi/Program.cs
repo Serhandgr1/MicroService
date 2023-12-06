@@ -12,6 +12,8 @@ using Ocelot.Middleware;
 using BuiseneesLayer.Contracts;
 using BuiseneesLayer.Abstracts;
 using Product.Api;
+using AspNetCoreRateLimit;
+using Ocelot.Values;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
@@ -30,6 +32,18 @@ builder.Services.AddCors(options =>
 });
 // Add services to the container.
 // builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+var rateLimitRules = new List<RateLimitRule>() {
+                new RateLimitRule(){
+                    Endpoint="*",
+                    Limit=15,
+                    Period="1m"
+                }
+            };
+builder.Services.Configure<IpRateLimitOptions>(opt => opt.GeneralRules = rateLimitRules);
+builder.Services.AddSingleton<IRateLimitCounterStore, MemoryCacheRateLimitCounterStore>();
+builder.Services.AddSingleton<IIpPolicyStore, MemoryCacheIpPolicyStore>();
+builder.Services.AddSingleton<IRateLimitConfiguration, RateLimitConfiguration>();
+builder.Services.AddSingleton<IProcessingStrategy, AsyncKeyLockProcessingStrategy>();
 builder.Services.AddOcelot();
 builder.Configuration.AddJsonFile("Ocelot.json");
 builder.Services.AddControllers();
@@ -51,6 +65,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseIpRateLimiting();
 
 app.UseAuthorization();
 
